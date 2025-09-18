@@ -42,7 +42,7 @@
                 <label for="price">Precio:</label>
                 <div id="priceOrders" class="selectMenu control">
                     <div class="menuOptions" id="menuOptions">
-                        <div id="selectMenuItem" class="selectMenuItem downTop" onclick='changeSelection(this)'>Menor a Mayor</div>
+                        <div id="selectMenuItem" class="selectMenuItem downTop" onclick=' changeSelection(this)'>Menor a Mayor</div>
                         <div id="selectMenuItem" class="selectMenuItem topDown" onclick='changeSelection(this)'>Mayor a Menor</div>
                     </div>
                     <p id="selection">Ingresar orden</p>
@@ -63,10 +63,12 @@
                         </p>
                     </div>
                     <div class="buyControls">
-                        <button class="amountButton less" onclick='changeAmount(1, -1)'>-</button>
-                        <input type="number" id="amount1" oninput="updatePrice(1)">
-                        <button class="amountButton add" onclick='changeAmount(1, 1)'>+</button>
-                        <p class="price" id="price1">$1500</p>
+                        <div class="counter">
+                            <button class="amountButton less" onclick='changeAmount(1, -1)'>-</button>
+                            <input type="number" min="0" id="amount1" oninput="updatePrice(1); validity.valid || (value ='');">
+                            <button class="amountButton add" onclick='changeAmount(1, 1)'>+</button>
+                        </div>
+                        <div class="priceBox"><p class="price" id="price1">$0</p></div>
                         <button class="buyButton" id="buyButton1">Comprar</button>
                     </div>
                 </div>

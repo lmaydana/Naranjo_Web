@@ -78,22 +78,27 @@ body{
     transition: all 1s ease;
 }
 
+.results{
+    width: 100%;
+}
+
 .result{
-    height: 40vh;
     width: 100%;
     border-bottom: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
-
+.result img{
+    max-width: 25%;
+}
 
 .searchInfo{
     display: flex;
-    height: 100%;
     flex-direction: column;
     justify-content: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 25%;
     
 }
 
@@ -111,24 +116,34 @@ body{
 }
 
 .buyControls{
+    width: 50%;
     display: flex;
     text-align: center;
     align-items: center;
-    width: fit-content;
 }
 
 .buyControls button{
-    height: 20vh;
     background: white;
     border: 1px solid gray;
     cursor: pointer;
     border-radius: 10px;
     font-size: 3rem;
     transition: all .3s ease;
+
+}
+
+.buyControls > button{
+    width: 25%;
+}
+
+.counter{
+    width: 50%;
+    display: flex;
 }
 
 .amountButton{
-    width: 20vh;
+    width: 33%;
+    aspect-ratio: 1/1;
 }
 
 .buyControls button:hover{
@@ -137,21 +152,33 @@ body{
 }
 
 .buyControls input{
-    height: 19.5vh;
-    width: 20vh;
     font-size: 3rem;
     border-radius: 10px;
     text-align: center;
+    width: 33%;
+    aspect-ratio: 1/1;
+
+}
+
+.priceBox{
+    width: 25%;
+    height: 50%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow:unset;
 }
 
 .price{
-    width: 20vh;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .buyControls p{
     font-size: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0 2vw;
 }
 
 input::-webkit-outer-spin-button,
