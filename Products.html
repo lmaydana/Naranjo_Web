@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Naranjo En Flor Deco</title>
+        <link rel="stylesheet" href="styles/menu_style.css">
+        <link rel="stylesheet" href="styles/product_style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="scripts/Jquery/jquery-3.7.1.min.js"></script>
+        <script src="scripts/menu.js"></script>
+        <script src="scripts/search.js"></script>
+    </head>
+    <body>
+        <div class="menu">
+            <div class="mainmenu">
+                <ul>
+                    <a class="menuitem inicio"href="index.html"><li>Inicio</li></a>
+                    <a class="menuitem"href=""><li>Productos</li></a>
+                    <a class="menuitem"href="Contacto.html"><li>Contacto</li></a>
+                </ul>
+            </div>
+            <div class="menulog">
+                <ul>
+                    <a class="menuitem"href="#"><li><i class="material-icons">person_3</i>Registrarse</li></a>
+                    <a class="menuitem iniciarsesion"href="#"><li><i class="material-icons">key</i>Iniciar sesión</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="search">
+            <div class="searchbar">
+                <input type="search" placeholder="Decinos que buscas">
+                <button class="control"><i class="material-icons">search</i></button>
+                <label for="types">Tipo:</label>
+                <div id="types" class="selectMenu control">
+                    <div class="menuOptions" id="menuOptions">
+                        <div id="selectMenuItem" class="selectMenuItem products" onclick='changeSelection(this)'>Productos</div>
+                        <div id="selectMenuItem" class="selectMenuItem toppers" onclick='changeSelection(this)'>Toppers</div>
+                        <div id="selectMenuItem" class="selectMenuItem digitals" onclick='changeSelection(this)'>Digitales</div>
+                    </div>
+                    <p id="selection">Ingresar tipo</p>
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </div>
+                <label for="price">Precio:</label>
+                <div id="priceOrders" class="selectMenu control">
+                    <div class="menuOptions" id="menuOptions">
+                        <div id="selectMenuItem" class="selectMenuItem downTop" onclick='changeSelection(this)'>Menor a Mayor</div>
+                        <div id="selectMenuItem" class="selectMenuItem topDown" onclick='changeSelection(this)'>Mayor a Menor</div>
+                    </div>
+                    <p id="selection">Ingresar orden</p>
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </div>
+            </div>
+            <div class="results">
+                <div class="result">
+                    <img src="imgs/combos-ej.jpg">
+                    <div class="searchInfo">
+                        <p class="title">Combo feliz 1</p>
+                        <p>El combo contiene:
+                            <br>✓ Letra shaker
+                            <br>✓ Topper shaker
+                            <br>✓ Toppers variados
+                            <br>✓ Baggios personalizados
+                            <br>✓ Planchas de stickers troqueladas
+                        </p>
+                    </div>
+                    <div class="buyControls">
+                        <button class="amountButton less" onclick='changeAmount(1, -1)'>-</button>
+                        <input type="number" id="amount1" oninput="updatePrice(1)">
+                        <button class="amountButton add" onclick='changeAmount(1, 1)'>+</button>
+                        <p class="price" id="price1">$1500</p>
+                        <button class="buyButton" id="buyButton1">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

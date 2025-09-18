@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    width:100%;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+
+.menu{
+    height: 10%;
+    font-size: 20pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menuitem{
+    text-decoration: none;
+    align-content: center;
+    color: white;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.menuitem:visited{
+    color: white;
+}
+
+.inicio{
+    border-radius: 0px 0px 0px 30px;
+}
+
+.iniciarsesion{
+    border-radius: 0px 0px 30px 0px;
+}
+
+.menuitem:hover{
+    background-color: rgb(190, 218, 225);
+    -moz-transition:all .3s ease;
+	transition:all .3s ease;
+}
+
+.menu ul{
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mainmenu{
+    background-color: rgb(190, 228, 231);
+    height: 100%;
+    flex-grow: 3;
+    border-radius: 0px 0px 0px 30px;
+}
+
+.menulog{
+    background-color: rgb(190, 228, 231);
+    height: 100%;
+    flex-grow: 1;
+    margin-left: 5px;
+    border-radius: 0px 0px 30px 0px;
+}

@@ -1,0 +1,233 @@
+
+.banner{
+    height: 70%;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: rgb(255, 246, 236);
+    padding: 0;
+}
+
+.banner img{
+    max-width: 100%;
+
+}
+
+.info{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.separator{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    user-select: none;
+    align-items: flex-end;
+    margin-bottom: 3%;
+    margin-bottom: 20%;
+}
+
+.separator img{
+    width: 100px;
+    position: absolute;
+    top:-100%;
+
+}
+
+.separatorbar{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(244, 144, 185);
+    color:azure;
+    border-radius: 30px;
+    text-align: center;
+    justify-content: flex-end;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30pt;
+}
+
+.toppers{
+    background: rgb(149, 199, 194);
+}
+
+.files{
+    background: rgb(244, 159, 81);
+}
+
+.whatssappfloatbutton{
+    background: rgb(190, 228, 231);
+    font-size: 48pt;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 0px;
+}
+
+.separatorbar p{
+    padding-top: 2%;
+}
+
+input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+}
+
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.catalog{
+    display: flex;
+    justify-content: center;
+}
+
+.combo{
+    width: 100%;
+    height: 350px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10%;
+    user-select: none;
+}
+
+.combo img{
+    border-radius: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+@keyframes animationImage {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.combo img:hover{
+    animation: animationImage;
+    animation-duration: .8s;
+}
+
+.comboInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productName{
+    width: 100%;
+    text-align: center;
+    border-radius: 0px 30px 0px 0px;
+    font-size: 150%;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(149, 199, 194);
+}
+
+.productDescription{
+    width: 99.8%;
+    height: 100%;
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    border-right: 1px solid rgb(149, 199, 194);
+}
+
+.buyInfo{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(149, 199, 194);;
+    border-radius: 0px 0px 30px 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15pt;
+    color: white;
+}
+
+.buyInfo input[type="number"]{
+    width: 20%;
+    border: 0.5px solid gray;
+    border-radius: 0px;
+}
+
+.buyInfo input[type="number"]:focus-visible{
+    border: 1px solid lightblue;
+}
+
+.buyInfo button{
+    width: 50%;
+    border: 0.5px solid white;
+    border-radius: 5px;
+    background: #f092d7;
+    margin: 0.5%;
+    transition: all .5s ease;
+    cursor: pointer;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.buyInfo button:hover{
+    background: #c576b0;
+}
+
+.footy{
+    justify-items: center;
+    text-align: center;
+    border-top: 1px solid black;
+    height: 20%;
+    user-select: none;
+}
+
+.socials{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-top: 3%;
+}
+
+.footy a{
+    color: white;
+}
+
+.footy a:visited{
+    color: white;
+}
+
+.footy i{
+    background: #f092d7;
+    border-radius: 50%;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    color: white;
+}
+
+.whatssappfloatbutton a{
+    color: white;
+}
+
+.whatssappfloatbutton a:visited{
+    color: white;
+}
