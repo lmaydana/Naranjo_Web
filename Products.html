@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Naranjo En Flor Deco</title>
+        <meta charset="utf8">
         <link rel="stylesheet" href="styles/menu_style.css">
         <link rel="stylesheet" href="styles/product_style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -20,8 +21,9 @@
             </div>
             <div class="menulog">
                 <ul>
-                    <a class="menuitem"href="#"><li><i class="material-icons">person_3</i>Registrarse</li></a>
-                    <a class="menuitem iniciarsesion"href="#"><li><i class="material-icons">key</i>Iniciar sesión</li></a>
+                    <li class="menuitem" id="signUp"><i class="material-icons">person_3</i> Registrarse</li>
+                    <li class="menuitem iniciarsesion" id="login"><i class="material-icons">key</i>Ingresar</li>
+                    <div class="logFrame"><iframe src="" style="display: none;"></iframe></div>
                 </ul>
             </div>
         </div>
@@ -51,10 +53,9 @@
             </div>
             <div class="results">
                 <div class="result">
-                    <img src="imgs/combos-ej.jpg">
                     <div class="searchInfo">
                         <p class="title">Combo feliz 1</p>
-                        <p>El combo contiene:
+                        <p class="productDescription">El combo contiene:
                             <br>✓ Letra shaker
                             <br>✓ Topper shaker
                             <br>✓ Toppers variados
@@ -62,14 +63,37 @@
                             <br>✓ Planchas de stickers troqueladas
                         </p>
                     </div>
+                    <img src="imgs/combos-ej.jpg"/>
                     <div class="buyControls">
                         <div class="counter">
-                            <button class="amountButton less" onclick='changeAmount(1, -1)'>-</button>
-                            <input type="number" min="0" id="amount1" oninput="updatePrice(1); validity.valid || (value ='');">
-                            <button class="amountButton add" onclick='changeAmount(1, 1)'>+</button>
+                            <button class="amountButton add" onclick='changeAmount(1, -1)'>-</button>
+                            <input type="number" min="0" value="0" id="amount1" oninput="updatePrice(1); validity.valid || (value ='');">
+                            <button class="amountButton less" onclick='changeAmount(1, 1)'>+</button>  
                         </div>
                         <div class="priceBox"><p class="price" id="price1">$0</p></div>
                         <button class="buyButton" id="buyButton1">Comprar</button>
+                    </div>
+                </div>
+                <div class="result">
+                    <div class="searchInfo">
+                        <p class="title">Combo feliz 1</p>
+                        <p class="productDescription">El combo contiene:
+                            <br>✓ Letra shaker
+                            <br>✓ Topper shaker
+                            <br>✓ Toppers variados
+                            <br>✓ Baggios personalizados
+                            <br>✓ Planchas de stickers troqueladas
+                        </p>
+                    </div>
+                    <img src="imgs/combos-ej.jpg"/>
+                    <div class="buyControls">
+                        <div class="counter">
+                            <button class="amountButton add" onclick='changeAmount(2, -1)'>-</button>
+                            <input type="number" min="0" value="0" id="amount2" oninput="updatePrice(2); validity.valid || (value ='');">
+                            <button class="amountButton less" onclick='changeAmount(2, 1)'>+</button>  
+                        </div>
+                        <div class="priceBox"><p class="price" id="price2">$0</p></div>
+                        <button class="buyButton" id="buyButton2">Comprar</button>
                     </div>
                 </div>
             </div>

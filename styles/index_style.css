@@ -198,6 +198,10 @@ input[type="number"] {
     user-select: none;
 }
 
+.footy a{
+    text-decoration: none;
+}
+
 .socials{
     display: flex;
     flex-direction: row;

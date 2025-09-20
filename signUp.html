@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Naranjo</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="styles/login_style.css">
+        <script src="scripts/Jquery/jquery-3.7.1.min.js"></script>
+        <script src="scripts/jquery.validate.min.js"></script>
+        <script src="scripts/signUp.js"></script>
+    </head>
+    <body>
+        <form id="signUpForm" method="post" action="php/signup.php" >
+            <table>
+                <tr>
+                    <td><label for="user">Nombre de Usuario </label></td>
+                    <td><input type="text" name="user" required title="*obligatorio"/></td>
+                </tr>
+                <tr>
+                    <td><label for="mail">Mail </label></td>
+                    <td><input type="mail" name="mail" id="mail" required title="Ingrese mail valido"/></td>
+                </tr>
+                <tr>
+                    <td><label for="passw">Contraseña </label></td>
+                    <td><input type="password" id="password" name="passw" required title="*obligatorio"/></td>
+                </tr>
+                <tr>
+                    <td><label for="confirm_password" >Confirme contraseña </label></td>
+                    <td><input type="password" id="confirm_password" required title="Confirme la contraseña" name="confirm_password"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="formButtons">
+                            <input type="submit" id="signUpButton" value="Registrarse">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="result"></div>
+    </body>
+</html>
