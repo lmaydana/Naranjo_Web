@@ -25,7 +25,8 @@
         move_uploaded_file($image['tmp_name'], $save_folder.$formatted_new_name.".".$type);
         $base = new PDO("mysql:host=localhost; dbname=naranjo","root","");
         $base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $base->exec("SET CHARACTER SET utf8");
+        $base->exec("SET CHARACTER SET utf8mb4");
+        $base->exec("SET NAMES utf8mb4");
         if (nameExists($base, $product_name)){
             array_push($error_array, "nameExists");
         }
@@ -38,7 +39,7 @@
         $result->execute(array(":name"=>$product_name,":price"=>$price, ":description"=>$description, ":work"=>($work/$amount_per_work)));
         $result->closeCursor();
         echo "correct";
-        header("Location:../loadProducts.html");
+        //header("Location:../loadProducts.html");
     }catch(Exception $e){
         die("Error:" . $e->getMessage());
     }
