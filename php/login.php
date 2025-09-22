@@ -1,40 +1,34 @@
 <?php
 		try{
-
+			
 			if (isset($_SESSION['user_id'])){
-				header('Location:index.html');
+				echo "sucess";
+				return;
 			}
 
 			$user = htmlentities( addslashes( $_POST['user'] ) );
-			$password = htmlentities( addslashes( $_POST['contra'] ) );
-			$counter = 0;
+			$password = htmlentities( addslashes( $_POST['passw'] ) );
 
-			$base = new PDO("mysql:host=localhost; dbname=pruebas","root","");
+			$base = new PDO("mysql:host=localhost; dbname=naranjo","root","");
 			$base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			$base->exec("SET CHARACTER SET utf8");
 			$sql = "SELECT * FROM users WHERE user_name = :user";
 			$result = $base->prepare($sql);
 			$result->bindValue(":user", $user);
 			$result->execute();
+			$registro=$result->fetch(PDO::FETCH_ASSOC);
 
-			while($registro=$result->fetch(PDO::FETCH_ASSOC)){
-
-				if(password_verify($password,$registro["password"] )){
-
-					$counter++;
-
-				}
-
-			}
-			if($counter > 0){
-				session_start();
-				$_SESSION['user_id'] = $registro['id'];
-				$_SESSION['shopping_cart'] = array();
-				echo "success";
-			}else{
+			if(!password_verify($password,$registro["password"] )){
 				echo "fail";
+				$result->closeCursor();
+				return;
 			}
-			
+
+			session_start();
+			$_SESSION['user_id'] = $registro["id"];
+			$_SESSION['shopping_cart'] = array();
+			$_SESSION['privilege_level'] = $registro['privilege_level'];
+			echo "success";
 			$result->closeCursor();
 
 		}catch(Exception $e){

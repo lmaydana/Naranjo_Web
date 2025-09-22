@@ -35,7 +35,18 @@ form table label{
     font-size: 1.1rem;
 }
 
-form table input[type="text"], input[type="password"], input[type="mail"]{
+input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+}
+
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+form table input[type="text"], input[type="password"], input[type="mail"], input[type="number"]{
     height: 30px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -44,7 +55,7 @@ form table input[type="text"], input[type="password"], input[type="mail"]{
     text-align: center;
 }
 
-form table input[type="text"]:focus-visible, input[type="password"]:focus-visible, input[type="mail"]:focus-visible{
+form table input[type="text"]:focus-visible, input[type="password"]:focus-visible, input[type="mail"]:focus-visible, input[type="number"]:focus-visible{
     border: 0px solid #f092d7;
     box-shadow: 1px 1px 5px #f092d7;
     
@@ -70,6 +81,22 @@ form table input[type="text"]:focus-visible, input[type="password"]:focus-visibl
 
 .formButtons input[type="submit"]:hover{
     background: rgb(173, 46, 183);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover{
+    box-shadow: 1px 1px 5px #f092d7;
 }
 
 .formButtons input[type="submit"]:active{

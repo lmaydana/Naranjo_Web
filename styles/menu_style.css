@@ -43,11 +43,11 @@ body{
     color: white;
 }
 
-.inicio{
+.ini{
     border-radius: 0px 0px 0px 30px;
 }
 
-.iniciarsesion{
+.loginItem{
     border-radius: 0px 0px 30px 0px;
 }
 
@@ -79,9 +79,52 @@ body{
     border-radius: 0px 0px 30px 0px;
 }
 
+#userInfo{
+    border-radius: 0px 0px 30px 0px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#userInfo:hover .userMenu{
+    display: block;
+}
+
+.userMenu{
+    display: none;
+    position: absolute;
+    background: rgb(173, 208, 210);
+    border-radius: 10px;
+    top:100%;
+    color: white;
+}
+
+.userMenu p{
+    background: rgb(173, 208, 210);
+    color: white;
+    margin-bottom: 10px;
+}
+
+.userMenu p:last-child{
+    margin-bottom: 0px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+}
+
+.userMenu p:first-child{
+    border-radius: 10px 10px 0px 0px;
+}
+
+.userMenu p:hover{
+    background: rgb(125, 151, 152);
+}
+
+.userMenu a{
+    text-decoration: none;
+}
+
 .logFrame{
     height: fit-content;
-
 }
 
 .logFrame iframe{
@@ -91,4 +134,5 @@ body{
     background: white;
     border-radius: 10px;
     border-width: 0px;
+    box-shadow: 1px 0px 4px inset rgb(190, 16, 181);
 }

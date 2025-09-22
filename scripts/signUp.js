@@ -16,11 +16,11 @@ $(document).ready(function(){
         $.post("php/signup.php", data, (result)=>{
             if (result == "correct") {
                 $(".result").css("visibility", "visible").fadeIn(2000).html("Usuario creado exitosanente!").fadeOut(2000);
-                parent.document.getElementById('.logFrame iframe').style.display = 'none';
+                
                 return;
             }
             var obj = JSON.parse(result);
-            var errors = {"user": "El usuario esta actualmente en uso.", "email":"El email esta en uso."};
+            var errors = {"user": "El nombre de usuario no está disponible..", "email":"El email esta en uso."};
             var message = "";
             for(const key in obj){
                 message += errors[obj[key]] + "<br>";

@@ -54,7 +54,7 @@
     width: fit-content;
     display: flex;
     text-decoration: none;
-    align-items:left;
+    color: rgb(172, 48, 172);
 }
 
 .socials .insta a:visited{

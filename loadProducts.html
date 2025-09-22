@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Naranjo</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="styles/login_style.css">
+        <script src="scripts/Jquery/jquery-3.7.1.min.js"></script>
+        <script src="scripts/jquery.validate.min.js"></script>
+        <script src="scripts/loadProduct.js"></script>
+    </head>
+    <body>
+        <form id="loadProductForm" method="post" action="php/load_product.php" enctype="multipart/form-data" style="background: linear-gradient(rgb(244, 159, 81), rgb(244, 144, 185));">
+            <table style="border: 1px solid rgb(244, 159, 81); border-radius: 10px; padding: 5% 0; background-color: white;">
+                <tr>
+                    <td><label for="product_name">Nombre producto</label></td>
+                    <td><input type="text" name="product_name" required title="*obligatorio"/></td>
+                </tr>
+                <tr>
+                    <td><label for="price">Precio</label></td>
+                    <td><input type="number" name="price" id="price" required title="Se debe incluir un precio"/></td>
+                </tr>
+                <tr>
+                    <td><label for="description">Descripcion</label></td>
+                    <td><textarea wrap="hard" name="description" id="description" required title="Se debe incluir una descripción"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="passw">Cantidad de trabajo en dias</label></td>
+                    <td><input type="number" id="work" name="work" required title="*obligatorio"/> X <input type="number" id="pieces" name="pieces" required title="*obligatorio" placeholder="Cantidad de piezas"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align:start;"><label class="custom-file-upload" for="image" >Seleccionar Imagen<input type="file" id="image" required title="*obligatorio" name="image"/></label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="formButtons">
+                            <input type="submit" id="signUpButton" value="Enviar" style="width: 100%; margin-top: 5%;">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="result"></div>
+    </body>
+</html>
