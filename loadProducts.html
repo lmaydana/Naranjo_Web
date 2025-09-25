@@ -20,8 +20,20 @@
                     <td><input type="number" name="price" id="price" required title="Se debe incluir un precio"/></td>
                 </tr>
                 <tr>
+                    <td><label for="type">Tipo</label></td>
+                    <td>
+                        <select name="type" id="type" required title="Se debe elegir un tipo">
+                            <option value="combo">Combo</option>
+                            <option value="products">Producto</option>
+                            <option value="toppers">Toppers</option>
+                            <option value="digitals">Digital</option>
+                        </select>
+                        
+                    </td>
+                </tr>
+                <tr>
                     <td><label for="description">Descripcion</label></td>
-                    <td><textarea wrap="hard" name="description" id="description" required title="Se debe incluir una descripción"></textarea></td>
+                    <td><textarea name="description" id="description" required title="*obligatorio"></textarea></td>
                 </tr>
                 <tr>
                     <td><label for="passw">Cantidad de trabajo en dias</label></td>

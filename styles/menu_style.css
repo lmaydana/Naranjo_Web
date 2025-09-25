@@ -13,7 +13,6 @@ html{
 body{
     height: 100%;
     width: 100%;
-    background: white;
 }
 
 .menu{
@@ -22,6 +21,7 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     flex-direction: row;
+    position: fixed;
     flex-wrap: wrap;
     top: 0;
     width: 100%;
@@ -103,6 +103,7 @@ body{
     background: rgb(173, 208, 210);
     color: white;
     margin-bottom: 10px;
+    border-radius: 0px;
 }
 
 .userMenu p:last-child{
@@ -121,10 +122,73 @@ body{
 
 .userMenu a{
     text-decoration: none;
+    color: white;
 }
 
 .logFrame{
     height: fit-content;
+}
+
+.cartMenu{
+    background: rgb(149, 199, 194);
+    color: white;
+    position: absolute;
+    text-align: center;
+    top:100%;
+    display: none;
+    right: 0%;
+    user-select: none;
+    border-radius: 10px;
+    border-spacing: 20px;
+    padding: 20px;
+}
+
+.cartMenu tr{
+    box-shadow: 0 1px 0 rgb(190, 228, 231);
+}
+
+.cartMenu tr:last-child{
+    box-shadow: 0 0px 0 black;
+}
+
+.cart:hover .cartMenu{
+    display: block;
+}
+
+#cart i:hover .cartMenu{
+    display: block;
+}
+
+.deleteRequest {
+    width: 15%;
+    background: rgb(244, 159, 81);
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    border-width: 0px;
+    scale: 1 / 1;
+}
+
+.toBuyEnd{
+    text-decoration: none;
+    color: white;
+    margin-top: 3%;
+    background: rgb(244, 159, 81);
+    padding: 3%;
+    border-radius: 5px;
+    transition: all .5s ease-in;
+}
+
+.toBuyEnd:visited {
+    color: white;
+}
+
+.toBuyEnd:hover, .deleteRequest:hover{
+    box-shadow: 1px 1px 5px black;
+}
+
+.toBuyEnd:active, .deleteRequest:active{
+    box-shadow: 1px 1px 5px inset black;
 }
 
 .logFrame iframe{

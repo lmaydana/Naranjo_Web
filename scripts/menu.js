@@ -1,12 +1,5 @@
 $(document).ready(function(){
     var menu = document.getElementsByClassName("body");
-    $(document).scroll(function(ev){
-        if(window.scrollY > 0) {
-            $(".menu").css("position", "fixed");
-        } else {
-            $(".menu").css("position", "relative"); 
-        }
-    });
 
     initSession();
 
@@ -68,9 +61,9 @@ function setUserMenu(){
 }
 
 function getUserHTML(userInfo){
-    var containers = `<a href="profile.html"><p class='profileItem profileData'>Opciones de perfil</p></a>`;
+    var containers = `<p class='profileItem profileData'><a href="profile.html">Opciones de perfil</a></p>`;
     if(userInfo.privilege_level == 1){
-        containers += `<a href="loadProducts.html"><p class='profileItem uploadProduct'>Subir producto</p></a>`;
+        containers += `<p class='profileItem uploadProduct'><a href="loadProducts.html">Subir producto</a></p>`;
     }
     containers += `<p class='profileItem closeSession'>Cerrar sesión</p>`;
     return containers;
@@ -96,28 +89,43 @@ function setCartMenu(){
             $(".menulog ul").prepend(`
                 <li class='menuitem' id='cart'>
                     <i class='material-icons'>shopping_cart</i>
-                    <div class='occult cartMenu' style='display:none;'>
-                    </div>
-                </li>`);
+                </li>
+                <table class='occult cartMenu'>
+                    </table>`);
         }
 
-        $(".menulog .cartMenu").html(`${getCartHTML(cartInfo)}`);
+        $(".menulog .cartMenu").html(getCartHTML(cartInfo));
+        $("#cart, .cartMenu").mouseover(function(){
+            $(".cartMenu").css("display","block");
+        });
+        $("#cart, .cartMenu").mouseout(function(){
+            $(".cartMenu").css("display","none");
+        });
     });
 }
 
 function getCartHTML(cartInfo){
-    var containers = "";
+    var containers = `<tr><td colspan = "3">Resumen</td></tr>`;
+    containers += `<tr><td>Producto</td><td>Cantidad</td><td>Subtotal</td></tr>`;
     var counter = 1;
     var total = 0;
-    for (const request in cartInfo){
-        containers += `<div class='cartProduct product${counter}'>`;
-        containers += `<p class='cartProductInfo name${counter}'>${request.name}</p>`;
-        containers += `<p class='cartProductInfo amount${request.amount}'>${request.amount}</p>`;
-        containers += `<p class='cartProductInfo subtotal${counter}'>${request.subtotal}</p>`;
-        containers += `</div>`;
+    for (const productId in cartInfo){
+        var request = cartInfo[productId];
+        containers += `<tr class='cartProduct product${counter}'>`;
+        containers += `<td class='cartProductInfo name${counter}'>${request.name}</td>`;
+        containers += `<td class='cartProductInfo amount${counter}'>${request.amount}</td>`;
+        containers += `<td class='cartProductInfo subtotal${counter}'>$${request.subtotal}<button class="deleteRequest" onclick="deleteRequest(${productId})">X</button></td>`;
+        containers += `</tr>`;
         counter++;
         total += request.subtotal;
     }
-    containers += `<div class='carTotal'>${total}</div>`;
+    containers += `<tr class='carTotal'><td>Total</td><td colspan="2">$${total}</td></tr>`;
+    containers += `<tr><td colspan="3"><a class="toBuyEnd" href="buyEnd.html">Continuar compra!</a></td></tr>`;
     return containers;
+}
+
+function deleteRequest(id){
+    $.post("php/delete_request.php", {productId: id}, function(result) { 
+        setCartMenu();
+     });
 }

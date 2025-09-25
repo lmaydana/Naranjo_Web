@@ -46,7 +46,7 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-form table input[type="text"], input[type="password"], input[type="mail"], input[type="number"]{
+form table input[type="text"], input[type="password"], input[type="mail"], input[type="number"], select{
     height: 30px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -55,7 +55,7 @@ form table input[type="text"], input[type="password"], input[type="mail"], input
     text-align: center;
 }
 
-form table input[type="text"]:focus-visible, input[type="password"]:focus-visible, input[type="mail"]:focus-visible, input[type="number"]:focus-visible{
+form table input[type="text"]:focus-visible, input[type="password"]:focus-visible, input[type="mail"]:focus-visible, input[type="number"]:focus-visible, select:focus-visible{
     border: 0px solid #f092d7;
     box-shadow: 1px 1px 5px #f092d7;
     

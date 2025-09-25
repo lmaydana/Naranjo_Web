@@ -1,4 +1,5 @@
 <?php
+	require('db_config.php');
 	function emailExists($pdo, $email) {
 		$stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE mail = ?");
 		$stmt->execute([$email]);
@@ -15,7 +16,7 @@
 			$pass = htmlentities(addslashes($_POST['passw']));
 			$mail = htmlentities(addslashes($_POST['mail']));
 			$pass_encryption = password_hash($pass, PASSWORD_DEFAULT, array("cost"=>12));
-			$base = new PDO("mysql:host=localhost; dbname=naranjo","root","");
+			$base = new PDO("mysql:host=".DB_HOST."; dbname=".DB_NAME,DB_USER,DB_PASS);
 			$base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			$base->exec("SET CHARACTER SET utf8");
 			$error_array = array();

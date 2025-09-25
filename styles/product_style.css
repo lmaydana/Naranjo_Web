@@ -13,6 +13,10 @@ body{
     width: 100%;
 }
 
+.search{
+    margin-top: 5%;
+}
+
 .searchbar{
     margin-top: 4vh;
     width: 100%;
@@ -113,7 +117,6 @@ body{
 
 .title{
     height: 10%;
-    /*border-radius: 10px 10px 0px 0px;*/
     display: flex;
     justify-content: center;
     align-items: center;
